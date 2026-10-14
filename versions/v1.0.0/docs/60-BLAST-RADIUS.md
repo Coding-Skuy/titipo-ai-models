@@ -1,5 +1,8 @@
 # 60-BLAST-RADIUS — titipo-ai-models
 
+> Versi: v1.0.0 | Status: disetujui | Menggantikan: -
+> Acuan: [TitipO-TownHall platform/versions/v1.0.0](https://github.com/Coding-Skuy/TitipO-TownHall/tree/main/platform/versions/v1.0.0) (BRD/PRD/FRD/FSD/SRS beku 2026-10-07).
+
 ## Konsumen
 
 - Konsumen langsung: belum ada di produksi (STUB_UNTIL); calon konsumen `titipo-web` (tampilan skor) dan `titipo-app-kmp` (urutan vendor).
@@ -23,3 +26,21 @@
 
 - Dampak maksimal urutan saran; tidak menyentuh pesanan, fee, ledger, atau auth JWT beraudien titipo.
 - Insiden data dieskalasi ke pemilik pipeline dan TownHall, bukan perbaikan bobot diam-diam.
+
+## Boleh disentuh
+
+Notebook/skrip training, model card, metrik eval, spesifikasi serving ONNX, dataset contoh 100 baris samaran.
+
+## Dilarang
+
+PII, bobot di atas 10 MB di repo, akses DB titipo, mengklaim produksi sebelum STUB_UNTIL dicabut, menentukan fee/repeat/cutoff.
+
+## Kontrak yang dikonsumsi
+
+Event anonim 90 hari dari `titipo-data-pipeline`.
+
+## Kontrak yang diproduksi
+
+Skor rekomendasi vendor lewat API Rust (kelak); saran baca saja.
+
+Sumber batas: [townhall-roadmap.md §2](https://github.com/Coding-Skuy/ChefGenie-TownHall/blob/main/townhall-roadmap.md) baris TitipO (pesan <=20.00, serah 06.00-08.00; sinyal `pedaree.stok.v1` anjuran saja; fee vendor 12%) dan [KONTEKS-LINTAS-DIVISI.md](https://github.com/Coding-Skuy/ChefGenie-TownHall/blob/main/KONTEKS-LINTAS-DIVISI.md) §3, §8, §9.
